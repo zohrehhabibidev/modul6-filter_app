@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
@@ -20,8 +20,13 @@
       <li>Welche Mitarbeiter wurden vor dem 1. Januar 2022 eingestellt und gehören NICHT zur Abteilung HR?</li>
     </ol>
 
-    <h2 style="color:red">Antworten:</h2>
+    <h2 style="color: red">Antworten:</h2>
+    <h3>Aufgabe 1</h3>
 
-    <!-- Hier eure Antworten rendern -->
+    <ul>
+      {% for employee in employees %}
+      <li>{{ employee.name }} - {{ employee.department.name }} - {{ employee.salary }} €</li>
+      {% endfor %}
+    </ul>
   </body>
 </html>

@@ -6,6 +6,10 @@ from datetime import date
 
 def employee_overview(request):
 
-    # Hier die entsprechenden Filter anlegen und die context-Variable definieren, um die Daten an das Template zu übergeben
+    employees = Employee.objects.all()
 
-    return render(request, 'employee_list.html')
+    context = {
+        "employees": employees,
+    }
+
+    return render(request, "employee_list.html", context)
