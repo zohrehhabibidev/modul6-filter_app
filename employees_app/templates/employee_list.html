@@ -28,5 +28,12 @@
       <li>{{ employee.name }} - {{ employee.department.name }} - {{ employee.salary }} €</li>
       {% endfor %}
     </ul>
+    <h3>Aufgabe 2</h3>
+
+    <ul>
+      {% for employee in high_earners %}
+      <li>{{ employee.name }}</li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
