@@ -15,11 +15,18 @@ def employee_overview(request):
         avg_salary=Avg("salary")
     )["avg_salary"]
 
+    employees_before_2022 = Employee.objects.filter(
+        hire_date__lt=date(2022, 1, 1)
+    ).exclude(
+        department__name="HR"
+    )
+
     context = {
         "employees": employees,
         "high_earners": high_earners,
         "employees_5000": employees_5000,
         "sales_average": sales_average,
+        "employees_before_2022": employees_before_2022,
     }
 
     return render(request, "employee_list.html", context)
